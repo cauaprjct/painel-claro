@@ -6,6 +6,8 @@
 
 🔗 **Demo ao vivo:** https://painel-contador.vercel.app
 
+![Painel Claro — visão geral: resumo em linguagem simples, KPIs e gráficos](docs/painel-hero.png)
+
 ## O problema
 Escritórios de contabilidade pequenos entregam o financeiro do cliente em **PDF/planilha técnica** que o
 dono da empresa (leigo) **não entende**. Resultado: o cliente liga toda hora ("quanto vou pagar?") e não
@@ -19,6 +21,8 @@ Um painel simples, bonito e com a **marca do escritório**, que o contador entre
 - **Impostos explicados** sem jargão + próximos prazos.
 - **Seção Reforma 2026** com simulador ilustrativo (rotulado como estimativa educativa, não cálculo oficial).
 - **Planilha → painel:** suba um CSV e o painel se redesenha na hora (processado no navegador, nada sai dele).
+
+![Painel completo: gráficos, impostos explicados, prazos, simulador da Reforma 2026 e upload de CSV](docs/painel-full.png)
 
 ## Stack e decisões
 - **Next.js 14 + Vercel** · **Recharts** (gráficos) · **papaparse** (CSV no cliente) · CSS próprio (sem framework).
