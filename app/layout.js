@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Painel Claro — financeiro e impostos do seu negócio, sem complicação",
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
           href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f766e'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-size='62' font-weight='800' fill='white' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E"
         />
       </head>
-      <body>{children}</body>
+      <body>{children}<Analytics /></body>
     </html>
   );
 }
