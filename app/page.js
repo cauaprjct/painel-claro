@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Papa from "papaparse";
 import {
   ResponsiveContainer, BarChart, Bar, LineChart, Line, AreaChart, Area,
@@ -25,10 +25,17 @@ export default function Painel() {
   const [empresa, setEmpresa] = useState(EMPRESA_DEMO.nome);
   const [periodo, setPeriodo] = useState("mes");
   const [msg, setMsg] = useState(null);
+  const [escritorio, setEscritorio] = useState("[Seu Escritório de Contabilidade]");
   // reforma
   const [aliquotaRef, setAliquotaRef] = useState(8);
   const [credito, setCredito] = useState(20);
   const fileRef = useRef();
+
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    const e = (p.get("e") || p.get("escritorio") || "").trim();
+    if (e) setEscritorio(e.slice(0, 60));
+  }, []);
 
   const r = useMemo(() => resumo(dataset, periodo), [dataset, periodo]);
   const rAno = useMemo(() => resumo(dataset, "ano"), [dataset]);
@@ -76,7 +83,7 @@ export default function Painel() {
             <div className="brand-logo">P</div>
             <div>
               <div className="nome">Painel Claro</div>
-              <div className="sub">fornecido por <b>[Seu Escritório de Contabilidade]</b></div>
+              <div className="sub">fornecido por <b>{escritorio}</b></div>
             </div>
           </div>
           <div className="head-actions">
