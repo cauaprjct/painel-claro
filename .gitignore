@@ -1,0 +1,17 @@
+# dependencias
+node_modules/
+
+# build do next
+.next/
+out/
+
+# vercel
+.vercel
+
+# env
+.env
+.env*.local
+
+# logs / sistema
+npm-debug.log*
+.DS_Store
